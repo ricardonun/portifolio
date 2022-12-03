@@ -52,8 +52,8 @@ export default function Home(props: any) {
           <a href="https://www.linkedin.com/in/ricardonpaz/" target="noreferrer">
             <IconLabel icon={<LinkedinLogo />} label="ricardonpaz" hasHover />
           </a>
-          <a href="ricardonun.com" target="noreferrer">
-            <IconLabel icon={<Globe />} label="https://www.ricardonun.com" hasHover />
+          <a href="https://www.ricardonun.com" target="noreferrer">
+            <IconLabel icon={<Globe />} label="ricardonun.com" hasHover />
           </a>
           <IconLabel icon={<Envelope />} label="riic.nun@gmail.com" />
         </div>
