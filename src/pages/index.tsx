@@ -46,13 +46,13 @@ export default function Home(props: any) {
         <div className="w-[348px] h-[348px] drop-shadow-custom mt-[30px] p-5 gap-5 bg-gray-200 flex flex-col space justify-start items-start rounded-[20px] px-9 py-[30px]">
           <IconLabel icon={<MapPin />} label="Brasil" />
           <IconLabel icon={<Briefcase />} label="Valferraco" />
-          <a href="https://github.com/ricardonun" target="_blank">
+          <a href="https://github.com/ricardonun" target="noreferrer">
             <IconLabel icon={<GithubLogo />} label="ricardonun" hasHover />
           </a>
-          <a href="https://www.linkedin.com/in/ricardonpaz/" target="_blank">
+          <a href="https://www.linkedin.com/in/ricardonpaz/" target="noreferrer">
             <IconLabel icon={<LinkedinLogo />} label="ricardonpaz" hasHover />
           </a>
-          <a href="ricardonun.net" target="_blank">
+          <a href="ricardonun.net" target="noreferrer">
             <IconLabel icon={<Globe />} label="ricardonun.net" hasHover />
           </a>
           <IconLabel icon={<Envelope />} label="riic.nun@gmail.com" />
