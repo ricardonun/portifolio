@@ -1,3 +1,4 @@
+
 import {
   MapPin,
   Briefcase,
@@ -19,7 +20,7 @@ interface ProjectProps {
   description: string;
   forks_count: number;
   language: string;
-  star_count: number;
+  stargazers_count: number;
 }
 
 export default function Home(props: any) {
@@ -29,7 +30,12 @@ export default function Home(props: any) {
     setProjects(props.data);
   }, []);
 
+  console.log(projects);
+  
   return (
+    <>
+    <div>
+    </div>
     <div className="bg-gray-500 flex gap-6">
       <div className="flex flex-col px-7 mt-[40px]">
         <div className="w-[348px] h-[292px] drop-shadow-custom rounded-[20px] flex-col flex justify-center items-center bg-gray-200 ">
@@ -109,13 +115,14 @@ export default function Home(props: any) {
                 description={projects.description}
                 forks={projects.forks_count}
                 language={projects.language}
-                star={projects.star_count}
+                star={projects.stargazers_count}
               />
             ))}
           </div>
         </>
       </div>
     </div>
+    </>
   );
 }
 
