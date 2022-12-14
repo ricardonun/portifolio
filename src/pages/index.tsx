@@ -1,4 +1,3 @@
-
 import {
   MapPin,
   Briefcase,
@@ -30,13 +29,8 @@ export default function Home(props: any) {
     setProjects(props.data);
   }, []);
 
-  console.log(projects);
-  
   return (
-    <>
-    <div>
-    </div>
-    <div className="bg-gray-500 flex gap-6">
+    <div className="bg-gray-500 flex gap-6 max-md:w-[500px]">
       <div className="flex flex-col px-7 mt-[40px]">
         <div className="w-[348px] h-[292px] drop-shadow-custom rounded-[20px] flex-col flex justify-center items-center bg-gray-200 ">
           <img
@@ -55,7 +49,10 @@ export default function Home(props: any) {
           <a href="https://github.com/ricardonun" target="noreferrer">
             <IconLabel icon={<GithubLogo />} label="ricardonun" hasHover />
           </a>
-          <a href="https://www.linkedin.com/in/ricardonpaz/" target="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/ricardonpaz/"
+            target="noreferrer"
+          >
             <IconLabel icon={<LinkedinLogo />} label="ricardonpaz" hasHover />
           </a>
           <a href="https://www.ricardonun.com" target="noreferrer">
@@ -99,30 +96,27 @@ export default function Home(props: any) {
         </div>
       </div>
 
-      <div>
-        <>
-          <div className="w-[928px] h-[86px] bg-gray-200 rounded flex justify-between items-center mt-10">
-            <p className="text-gray-100 p-4 font-bold text-xl">Meus projetos</p>
+      <div className="bg-gray-500 max-md:p-4">
+        <div className="w-[900px] max-md:w-[430px]  h-[86px] bg-gray-200 rounded-xl flex justify-between items-center mt-10">
+          <p className="text-gray-100 p-4 font-bold text-xl ">Meus projetos</p>
 
-            <p className="text-gray-100 p-4 text-x">Veja Todos</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {projects?.map((projects: ProjectProps) => (
-              <ProjectCard
-                key={projects?.id}
-                link={projects.html_url}
-                name={projects.name}
-                description={projects.description}
-                forks={projects.forks_count}
-                language={projects.language}
-                star={projects.stargazers_count}
-              />
-            ))}
-          </div>
-        </>
+          {/* <p className="text-gray-100 p-4 text-x">Veja Todos</p> */}
+        </div>
+        <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+          {projects?.map((projects: ProjectProps) => (
+            <ProjectCard
+              key={projects?.id}
+              link={projects.html_url}
+              name={projects.name}
+              description={projects.description}
+              forks={projects.forks_count}
+              language={projects.language}
+              star={projects.stargazers_count}
+            />
+          ))}
+        </div>
       </div>
     </div>
-    </>
   );
 }
 
