@@ -29,6 +29,8 @@ export default function Home(props: any) {
     setProjects(props.data);
   }, []);
 
+  console.log(props.data);
+
   return (
     <div className="bg-gray-500 flex gap-6 max-md:w-[500px]">
       <div className="flex flex-col px-7 mt-[40px]">
@@ -100,7 +102,9 @@ export default function Home(props: any) {
         <div className="w-[900px] max-md:w-[430px]  h-[86px] bg-gray-200 rounded-xl flex justify-between items-center mt-10">
           <p className="text-gray-100 p-4 font-bold text-xl ">Meus projetos</p>
 
-          {/* <p className="text-gray-100 p-4 text-x">Veja Todos</p> */}
+          <a  href="https://github.com/ricardonun?tab=repositories" target="noreferrer">
+            <p className={`text-gray-100 p-4 text-x hover:text-green`}>Veja Todos</p>
+          </a>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
           {projects?.map((projects: ProjectProps) => (
@@ -121,7 +125,9 @@ export default function Home(props: any) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://api.github.com/users/ricardonun/repos`);
+  const res = await fetch(
+    `http://api.github.com/users/ricardonun/repos?per_page=10`
+  );
   const data = await res.json();
 
   return { props: { data } };
